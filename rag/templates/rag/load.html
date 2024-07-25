@@ -1,0 +1,16 @@
+{{text}}
+
+<form action="{% url 'rag:load' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="ドキュメントを読み込む" name="loading">
+</form>
+
+
+<form action="{% url 'rag:load' %}" method="post">
+    {% csrf_token %}
+    <input type="textarea" name="question" placeholder="Enter text for action1 {{question}}">
+    <input type="submit" value="RAGに質問する" name = "ask">
+</form>
+
+
+{{answer}}

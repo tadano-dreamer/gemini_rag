@@ -1,0 +1,68 @@
+{% extends "rag/base.html" %}
+
+{% block body %}
+
+<h4 class="mb-4">-Selct the better AI</h4>
+
+<form method="post" action="{% url 'rag:select' %}">
+    {% csrf_token %}
+    <fieldset>
+        <div class="form-check my-2">
+            <input class="form-check-input" type="radio" name="choice" id="choice1" value="AI-1" checked>
+            <label class="form-check-label" for="choice1">
+                <strong> (*'▽') AI-1 </strong>
+            </label>
+        </div>
+        <div class="form-check my-4">
+            <input class="form-check-input" type="radio" name="choice" id="choice2" value="AI-2">
+            <label class="form-check-label" for="choice2">
+                <strong> (੭ु´･ω･`)੭ु⁾⁾ AI-2 </strong>
+            </label>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-danger">Check</button>
+        </div>
+    </fieldset>
+</form>
+
+
+<h4 class="mt-4">Your Select is :　{{your_select}}</h4>
+{% if message %}
+<h3 class="ms-4">
+   <red> {{message}}</red>
+</h3>
+
+<h4 class="mt-5">Explanation : </h4>
+
+<p>
+    LLM is not always says correct things, 
+    it sometimes says the wrong things as if that is completely correct. 
+    That is called <strong>"Halluscination"</strong>. Hallucination is often said the <u>big risk</u> of Generative AI.
+</p>
+<p>
+    In this case, Hallcinations were occered in the response of <strong>AI-2</strong>. 
+    AI-2 didn't know about Anpanman very well, 
+    so they made <u> wrong response</u> when they asked in detail of Anpanman.
+</p>
+<p>
+    On the contrary, <strong>AI-1</strong> made correct answer against the question of Anpanman even if it was very nitch.
+    Because AI-1 used the additional data of Anpanman. This technology is call <strong>RAG (Retriever Augmented Generation)</strong>.
+    RAG made it possible that makes <u>domain-specific AI</u>.
+</p>
+<p>
+    The point of this explanation is <strong>"LLM does not alwasy tells the correct things"</strong>.
+    Did you make sense ? 
+</p>
+<p>
+    Enjoy your AI-Life !!
+</p>
+
+{% endif %}
+
+<div class="mt-5">
+    <a href="{% url 'rag:llm_quiz' %}" class="btn btn-outline-secondary me-3" role="button">Try Again</a>
+    <a href="{% url 'rag:index' %}" class="btn btn-outline-secondary" role="button">Back to the Top</a>
+</div>
+
+
+{% endblock %}

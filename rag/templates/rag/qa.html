@@ -1,0 +1,45 @@
+{% extends "rag/base.html" %}
+
+{% block body %}
+
+<h2>Ask 2 AI</h2>
+<h5>-- Theme : <u>Anpanman</u></h5>
+
+<div class="mt-4">
+  <form action="{% url 'rag:llm_quiz' %}" method="post">
+    {% csrf_token %}
+    <textarea name="question_text"></textarea>
+      <input type="submit" value="Ask to Both" class="btn btn-primary ms-4">
+  </form>
+</div>
+
+
+{% if rag_ans %}
+<h1 class="mt-3">You Asked : </h1>
+<div class="fs-5 fw-bold mt-2 ms-5">
+  {{ question_text }}
+  {% endif %}
+</div>
+
+
+<h1 class="mt-5">(*'▽')　AI-1 said... </h1>
+<div class="fw-bold mt-4 ms-5">
+  {% if rag_ans %}
+  {{rag_ans | linebreaks }}
+  {% endif %}
+</div>
+
+<h1 class="mt-5">(੭ु´･ω･`)੭ु⁾⁾　AI-2 said...</h1>
+<div class="fw-bold mt-4 ms-5">
+  {% if simplellm_ans %}
+  {{simplellm_ans | linebreaks }}
+</div>
+
+
+<a href="{% url 'rag:select' %}" class="mt-4 ms-4 btn btn-danger">Selct Better AI</a>
+{% endif %}
+
+
+
+
+{% endblock %}
