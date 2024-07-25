@@ -1,5 +1,7 @@
 # Gemini RAG APP
 
+Which is better AI (mitigate hallucinations) ?
+
 ## Demo 
 ![切り抜きデモ](https://github.com/user-attachments/assets/cec67e16-d0fc-4955-bfd5-497d2a2480ae)
 
