@@ -1,6 +1,7 @@
 # Gemini RAG APP
 
-Which is better AI (mitigate hallucinations) ?
+The name of this App is "SB-AI(Select the Better AI)"
+You can learn RAG, which is said to be mitigate hallucinations, as a quiz game!
 
 ## Demo 
 ![切り抜きデモ](https://github.com/user-attachments/assets/cec67e16-d0fc-4955-bfd5-497d2a2480ae)
