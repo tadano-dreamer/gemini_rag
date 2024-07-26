@@ -1,6 +1,6 @@
 # Gemini RAG APP
 
-The name of this App is "SB-AI(Select the Better AI)"　^n
+The name of this App is "SB-AI(Select the Better AI)"　\n
 You can learn RAG, which is said to be mitigate hallucinations, as a quiz game!
 
 ## Demo 
